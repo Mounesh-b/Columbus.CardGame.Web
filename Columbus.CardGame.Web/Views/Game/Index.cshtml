@@ -1,0 +1,43 @@
+﻿@using Columbus.CardGame.Web.Models;
+@model GameModel
+
+@{
+    ViewBag.Title = "Game Page";
+}
+
+<div class="jumbotron">
+    <h3>Enjoy the Game</h3>
+
+    @using (Html.BeginForm("StartGame", "Game", FormMethod.Post))
+    {
+        <p class="lead">Select number decks you want to use to play the Game. Click on below button to start the Game.</p>
+        <div class="row">
+
+            <div class="input-lg">
+                @Html.TextBoxFor(m => m.NoOfDecks)
+            </div>
+            <br />
+
+            <div class="input-lg">
+                <input class="btn btn-primary btn-lg " type="submit" value="Start Game" />
+            </div>
+
+        </div>
+    }
+</div>
+
+<div class="row">
+    <div class="col-md-10">
+        <h2>Card Game description</h2>
+        <p class="lead text-info">
+            The card-deck assignment 🃏
+            The assignment is about designing and implementing an easy card game.
+
+            The card-game should have one or more decks.
+            The assignment is considered done when you can mix, sort and pull cards from the card game and the parts are unit-tested.
+            Your sorting shall sort the cards in the game according to color and value: hearts (Ace, 2, 3 ... King), diamonds, clover, spades etc. All cards in the decks should be sorted.
+        </p>
+        <p><a class="btn btn-default" href="https://www.columbusglobal.com/coding-assignment-columbus">Learn more &raquo;</a></p>
+    </div>
+
+</div>

@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Columbus.CardGame.Web", "Columbus.CardGame.Web\Columbus.CardGame.Web.csproj", "{F89120EE-0FDA-4E65-BAE1-C8DBD6E933BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Columbus.CardGame.Logic", "Columbus.CardGame.Logic\Columbus.CardGame.Logic.csproj", "{F7907805-E4BC-4442-B596-0D6A67BEF9ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Columbus.CardGame.Console", "Columbus.CardGame.Console\Columbus.CardGame.Console.csproj", "{0B69FDDF-DB00-4F2D-88FA-76413E385F7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F89120EE-0FDA-4E65-BAE1-C8DBD6E933BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89120EE-0FDA-4E65-BAE1-C8DBD6E933BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89120EE-0FDA-4E65-BAE1-C8DBD6E933BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89120EE-0FDA-4E65-BAE1-C8DBD6E933BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7907805-E4BC-4442-B596-0D6A67BEF9ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7907805-E4BC-4442-B596-0D6A67BEF9ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7907805-E4BC-4442-B596-0D6A67BEF9ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7907805-E4BC-4442-B596-0D6A67BEF9ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B69FDDF-DB00-4F2D-88FA-76413E385F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B69FDDF-DB00-4F2D-88FA-76413E385F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B69FDDF-DB00-4F2D-88FA-76413E385F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B69FDDF-DB00-4F2D-88FA-76413E385F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FA89CCD-4161-4BD5-A0B6-E43D745CA98A}
+	EndGlobalSection
+EndGlobal

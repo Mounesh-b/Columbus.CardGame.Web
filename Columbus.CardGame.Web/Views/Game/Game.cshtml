@@ -1,0 +1,255 @@
+﻿@using Columbus.CardGame.Web.Models;
+@model GameModel
+
+@{
+    ViewBag.Title = "Game is in progress...";
+    string value;
+    var shade = "&hearts;";
+    string color = "red";
+}
+
+<div class="container">
+
+    <h3 class="text-primary">Enjoy the Game</h3>
+
+    <div class="col-md-4">
+        @if (Model.OriginalDeck.Cards.Count > 0)
+        {
+            using (Html.BeginForm("Game", "Game", FormMethod.Post))
+            {
+                <p class="lead text-primary">Available cards - @Model.OriginalDeck.Cards.Count.</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="~/Images/playing-card-back-side-.jpg" class="card-img" />
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <div><input class="btn btn-success btn-lg" type="submit" value="Pull a card" /></div>
+                </div>
+            }
+
+        }
+        else
+        {
+            <p class="lead text-danger">No card is available in the deck.</p>
+        }
+    </div>
+
+    <div class="col-md-4">
+
+        @if (Model.Player1Deck.LatestCard.CardValue > 0)
+        {
+            <h4 class="text-primary">The card you pulled is: </h4>
+            <br />
+            <div style="border: thick; border-color:darkslateblue;">
+                @{
+                    var card = Model.Player1Deck.LatestCard;
+
+                    switch (card.CardValue)
+                    {
+                        case 1:
+                            value = "A";
+                            break;
+
+                        case 11:
+                            value = "J";
+                            break;
+
+                        case 12:
+                            value = "Q";
+                            break;
+
+                        case 13:
+                            value = "K";
+                            break;
+
+                        default:
+                            value = card.CardValue.ToString();
+                            break;
+                    }
+
+                    switch (card.CardShade)
+                    {
+                        case 1:
+                            shade = "&hearts;";
+                            color = "red";
+                            break;
+
+                        case 2:
+                            shade = "&diams;";
+                            color = "red";
+                            break;
+
+                        case 3:
+                            shade = "&clubs;";
+                            color = "black";
+                            break;
+
+                        case 4:
+                            shade = "&spades;";
+                            color = "black";
+                            break;
+
+                    }
+                    <div class="card table-bordered col-md-2" style="color: @color;">
+                        <div class="row card-top top-left text-left">
+                            <b>@value</b>
+                            <br />
+                            <b>@HttpUtility.HtmlDecode(shade)</b>
+                        </div>
+                        <div class="row card-shade center-block text-center">
+                            <b>@HttpUtility.HtmlDecode(shade)</b>
+                        </div>
+                        <div class="row card-bottom bottom-right text-right">
+                            <b>@HttpUtility.HtmlDecode(shade)</b>
+                            <br />
+                            <b>@value</b>
+                        </div>
+                    </div>
+                }
+            </div>
+            <br />
+        }
+        else
+        {
+            <h4 class="text-primary"> The card you (Player1) pulled is: </h4>
+        }
+
+    </div>
+
+    <div class="col-md-4">
+        @using (Html.BeginForm("ShuffleDeck", "Game", FormMethod.Post))
+        {
+            <h4 class="text-primary">To Shuffle the deck, click below button </h4>
+            <br />
+            <div>
+                <div ><input class="btn btn-primary btn-lg" type="submit" value="Shuffle the deck" /></div>
+            </div>
+            <br />
+        }
+    </div>
+    <div class="col-md-4">
+        @using (Html.BeginForm("RestartGame", "Game", FormMethod.Post))
+        {
+            <h4 class="text-primary">Do you want to restart the Game..? </h4>
+            <br />
+            <div>
+                <div ><input class="btn btn-primary btn-lg" type="submit" value="Restart the Game" /></div>
+            </div>
+            <br />
+        }
+    </div>
+
+    <br />
+
+</div>
+
+<br />
+
+<div class="container-player">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Player 1</h2>
+            <p class="lead text-primary">
+                You have @Model.Player1Deck.Cards.Count cards in your deck. Please click on the above button to pull a card.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4>
+                <b>Cards: </b> Cards are sorted according to color and value:
+                <span style="color: red;"> Hearts &hearts; (Ace, 2, 3 ... King), Diamonds &diams;, </span>
+                <span style="color: black;"> Clover &clubs;, Spades &spades;.</span>
+            </h4>
+            @foreach (var c in Model.Player1Deck.Cards)
+            {
+                //string cardValue;
+                //var shade = "&hearts;";
+                //string color = "red";
+
+                switch (c.CardValue)
+                {
+                    case 1:
+                        value = "A";
+                        break;
+
+                    case 11:
+                        value = "J";
+                        break;
+
+                    case 12:
+                        value = "Q";
+                        break;
+
+                    case 13:
+                        value = "K";
+                        break;
+
+                    default:
+                        value = c.CardValue.ToString();
+                        break;
+                }
+
+                switch (c.CardShade)
+                {
+                    case 1:
+                        shade = "&hearts;";
+                        color = "red";
+                        break;
+
+                    case 2:
+                        shade = "&diams;";
+                        color = "red";
+                        break;
+
+                    case 3:
+                        shade = "&clubs;";
+                        color = "black";
+                        break;
+
+                    case 4:
+                        shade = "&spades;";
+                        color = "black";
+                        break;
+
+                }
+                <div class="card table-bordered col-md-2" style="color: @color;">
+                    <div class="row card-top top-left text-left">
+                        <b>@value</b>
+                        <br />
+                        <b>@HttpUtility.HtmlDecode(shade)</b>
+                    </div>
+                    <div class="row card-shade center-block text-center">
+                        <b>@HttpUtility.HtmlDecode(shade)</b>
+                    </div>
+                    <div class="row card-bottom bottom-right text-right">
+                        <b>@HttpUtility.HtmlDecode(shade)</b>
+                        <br />
+                        <b>@value</b>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="container-player">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Player 2</h2> 
+            <p class="lead text-info">
+                You have @Model.Player2Deck.Cards.Count cards in your deck.
+                
+                Please share your interest to play the Game.
+            </p>
+            <p><a class="btn btn-default" href="https://localhost/">Learn more &raquo;</a></p>
+        </div>
+
+    </div>
+</div>
+

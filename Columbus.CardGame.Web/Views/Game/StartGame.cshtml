@@ -1,0 +1,51 @@
+﻿@using Columbus.CardGame.Web.Models;
+@model GameModel
+
+@{
+    ViewBag.Title = "Game is in progress...";
+}
+
+<div class="jumbotron">
+    <h3>Enjoy the Game</h3>
+
+    @if (Model.OriginalDeck.Cards.Count > 0)
+    {
+        using (Html.BeginForm("Game", "Game", FormMethod.Post))
+        {
+            <p class="lead">Available cards in the deck : @Model.OriginalDeck.Cards.Count.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="~/Images/playing-card-back-side-.jpg" style="width: 200px; height:300px;" />
+                </div>
+            </div>
+            <br />
+            <div>
+                <div><input class="btn btn-success btn-lg" type="submit" value="Pull a card" /></div>
+            </div>
+        }
+    }
+    else
+    {
+        <p class="lead">No card is available.</p>
+    }
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Player 1</h2>
+            <p>
+                You have @Model.Player1Deck.Cards.Count cards in your deck. Please click on the above card to pulla card
+            </p>
+            <p><a class="btn btn-default" href="https://www.columbusglobal.com/coding-assignment-columbus">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Player 2</h2>
+            <p>
+                You have @Model.Player2Deck.Cards.Count cards in your deck. Please click on the above card to pulla card
+            </p>
+            <p><a class="btn btn-default" href="https://localhost/">Learn more &raquo;</a></p>
+        </div>
+
+    </div>
+</div>
+
+

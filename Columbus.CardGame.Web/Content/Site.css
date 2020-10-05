@@ -1,0 +1,77 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'Arial Unicode MS', 'Microsoft Himalaya', 'Times New Roman', 'Lucida Sans';
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Add some padding inside the card container */
+.container-player {
+    padding: 10px 16px;
+    background-color: lightgrey;
+    font-family: Calibri, 'Times New Roman', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.card-img {
+    width: 100px;
+    height: 180px;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    height: 180px;
+    width: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    border: thick;
+    border-color:darkslategrey;
+    border-bottom-color: darkblue;
+    background-color: white;
+    margin: 10px;
+    
+}
+    /* On mouse-over, add a deeper shadow */
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        background-color: lightblue;
+    }
+
+.card-top {
+    /* Add shadows to create the "card" effect */
+    height: 60px;
+    font-size: 20px;
+    text-align: start;
+}
+
+.card-shade {
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.card-bottom {
+    height: 60px;
+    font-size: 20px;
+    text-align: end;
+}
